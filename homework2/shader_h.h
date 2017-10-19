@@ -1,23 +1,23 @@
 #ifndef SHADER_H
 #define SHADER_H
-//include
-//youdo
-//end
+#include <glad/glad.h>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 class Shader{
 	public:
-		unsigned int ID
-		Shader(string vertex_shader_file,string framgment_shader_file);
+		unsigned int ID;
+		Shader(std::string vertex_shader_file, std::string framgment_shader_file);
 		~Shader();
 		void use();//using this Shader
-		void set_bool(const string &name,bool vatue) const;
-		void set_int(const string &name,int value) const;
-		void set_float(const string &name,float value)const;
+		void set_bool(const std::string & name, bool value) const;
+		void set_int(const std::string & name, int value) const;
+		void set_float(const std::string & name, float value)const;
 	private:
-		
-	//youdo
-	//end
-}
+		void checkCompileErrors(unsigned int shader, std::string type);
+};
 
 
 #endif
